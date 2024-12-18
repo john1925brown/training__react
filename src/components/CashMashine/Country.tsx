@@ -67,7 +67,7 @@ export const Country = ({
         </button>
         <button
           onClick={() => {
-            removeMoneyHandler('USD');
+            removeMoneyHandler('RUB');
           }}
         >
           Снять 100р.

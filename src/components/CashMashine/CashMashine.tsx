@@ -44,11 +44,13 @@ export const CashMashine = () => {
     setMoney([newMoney, ...money]);
   };
 
-  const removeMoney = (banknote: BanknotsType) => {
-    // const index = money.findIndex
-    //  if (index !== -1) {
-    //      setMoney(money.filter((el, i) => ...));
-    //  }
+  const removeMoney = (key: BanknotsType) => {
+    const index = money.findIndex((el) => {
+      return el.banknote === key;
+    });
+    if (index !== -1) {
+      setMoney(money.filter((el, i) => i !== index));
+    }
   };
 
   return (

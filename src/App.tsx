@@ -3,6 +3,7 @@ import { Accordeon } from './components/Accordeon';
 import { Radio } from './components/Radio/Radio';
 import { CashMashine } from './components/CashMashine/CashMashine';
 import { Storage } from './components/LocalStrorageTrain/Storage';
+import AssotiativeArray from './components/associativeArray/src/AssotiativeArray';
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       {/* <Accordeon title="My list" /> */}
       {/* <Radio /> */}
       {/* <CashMashine /> */}
-      <Storage/>
+      {/* <Storage/> */}
+      <AssotiativeArray/>
     </div>
   );
 }

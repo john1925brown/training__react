@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-type AccordeonPropsType = {
+type AccordionPropsType = {
   title: string;
 };
 
-export const Accordeon = (props: AccordeonPropsType) => {
+export const Accordion = (props: AccordionPropsType) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const collapsedHandler = () => {

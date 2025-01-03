@@ -1,14 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Radio } from './components/Radio/Radio';
 import { CashMashine } from './components/CashMashine/CashMashine';
 import { Storage } from './components/LocalStrorageTrain/Storage';
 import AssotiativeArray from './components/associativeArray/src/AssotiativeArray';
 import { Accordion } from './components/Accordion';
+import { ControlledInput } from './components/ControlledInput/ControlledInput.stories';
 
 function App() {
+  const [isCollapsed, setIsCollapsed] = useState(false);
+
+  const collapsedHandler = () => {
+    setIsCollapsed(!isCollapsed);
+  };
+
+  const onClickHandler =  (value: any) => {
+    console.log(value)
+  }
   return (
     <div className="App">
-      <Accordion title="My list" />
+      <Accordion
+        title="My list"
+        isCollapsed={isCollapsed}
+        collapsedHandler={collapsedHandler}
+        items={[
+          { title: 'a', value: 1 },
+          { title: 's', value: 2 },
+          { title: 'q', value: 3 },
+        ]}
+        onClickHandler={onClickHandler}
+      />
       {/* <Radio /> */}
       {/* <CashMashine /> */}
       {/* <Storage/> */}

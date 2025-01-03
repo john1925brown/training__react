@@ -4,6 +4,7 @@ import { Radio } from './Radio';
 const meta: Meta<typeof Radio> = {
   component: Radio,
 };
+
 export default meta;
 
 type Story = StoryObj<typeof Radio>;

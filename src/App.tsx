@@ -5,6 +5,7 @@ import { Storage } from './components/LocalStrorageTrain/Storage';
 import AssotiativeArray from './components/associativeArray/src/AssotiativeArray';
 import { Accordion } from './components/Accordion';
 import { ControlledInput } from './components/ControlledInput/ControlledInput.stories';
+import { AppRouter } from './router_dom/src/AppRouter';
 
 function App() {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -33,6 +34,7 @@ function App() {
       {/* <CashMashine /> */}
       {/* <Storage/> */}
       {/* <AssotiativeArray /> */}
+      <AppRouter/>
     </div>
   );
 }

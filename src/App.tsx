@@ -35,8 +35,8 @@ function App() {
       {/* <CashMashine /> */}
       {/* <Storage/> */}
       {/* <AssotiativeArray /> */}
-      {/* <AppRouter/> */}
-      <ActualDate/>
+      <AppRouter/>
+      {/* <ActualDate/> */}
     </div>
   );
 }

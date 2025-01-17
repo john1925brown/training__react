@@ -1,14 +1,14 @@
 import { Navigate, NavLink, Route, Routes } from 'react-router-dom';
 import styles from './components/Site.module.css';
 import { Adidas } from './components/pages/Adidas';
-import { PageTwo } from './components/pages/PageTwo';
+import { Puma } from './components/pages/Puma';
 import { PageThree } from './components/pages/PageThree';
 import { Error404 } from './components/pages/Error404';
 import { Model } from './components/pages/Model';
 
 export const PATH = {
-  PAGE1: '/adidas',
-  PAGE2: '/puma',
+  ADIDAS: '/adidas',
+  PUMA: '/puma',
   PAGE3: '/abibas',
   ERROR404: '/error404',
 } as const;
@@ -26,7 +26,7 @@ export function AppRouter() {
               className={({ isActive }) =>
                 isActive ? styles.activeNavLink : styles.navLink
               }
-              to={PATH.PAGE1}
+              to={PATH.ADIDAS}
             >
               Adidas
             </NavLink>
@@ -36,7 +36,7 @@ export function AppRouter() {
               className={({ isActive }) =>
                 isActive ? styles.activeNavLink : styles.navLink
               }
-              to={PATH.PAGE2}
+              to={PATH.PUMA}
             >
               Puma
             </NavLink>
@@ -54,14 +54,18 @@ export function AppRouter() {
         </div>
         <div className={styles.content}>
           <Routes>
-            <Route path="/" element={<Navigate to={PATH.PAGE1} />} />
-            <Route path={PATH.PAGE1} element={<Adidas />} />
-            <Route path={PATH.PAGE2} element={<PageTwo />} />
+            <Route path="/" element={<Navigate to={PATH.ADIDAS} />} />
+            <Route path={PATH.ADIDAS} element={<Adidas />} />
+            <Route path={PATH.PUMA} element={<Puma />} />
             <Route path={PATH.PAGE3} element={<PageThree />} />
             <Route path={PATH.ERROR404} element={<Error404 />} />
 
-            <Route path="/adidas/:modelId" element={<Model />} />
-            <Route path="/*" element={<Navigate to={PATH.ERROR404} />} />
+            <Route path="/:brandName/:modelId" element={<Model />} />
+
+            {/* <Route path="/puma/:modelId" element={<Model />} /> */}
+
+            {/* <Route path="/*" element={<Navigate to={PATH.ERROR404} />} /> */}
+
           </Routes>
         </div>
       </div>

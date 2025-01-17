@@ -2,11 +2,22 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { adidasArr } from './Adidas';
 import { PATH } from '../../AppRouter';
 import { useEffect } from 'react';
+import { pumaArr } from './Puma';
+
+type ParamsType = { brandName: 'adidas' | 'puma'; modelId: string };
+
+const brandArray = {
+  adidas: adidasArr,
+  puma: pumaArr,
+};
 
 export const Model = () => {
-  const params = useParams();
+  const { brandName, modelId } = useParams<ParamsType>();
   const navigate = useNavigate();
-  const currentItem = adidasArr.find((item) => item.id === params.modelId);
+
+  const currentItem = brandName
+    ? brandArray[brandName].find((item) => item.id === modelId)
+    : null;
 
   useEffect(() => {
     if (!currentItem) {

@@ -13,10 +13,18 @@ export const ActualDate = () => {
     };
   }, []);
 
+  const seconds =
+    date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
+
+  const minutes =
+    date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+ 
+  const hours = date.getHours() < 10 ? '0' + date.getHours() : date.getHours();
+
   return (
     <>
       <p>
-        {date.getHours()}:{date.getMinutes()}:{date.getSeconds()}
+        {hours}:{minutes}:{seconds}
       </p>
     </>
   );

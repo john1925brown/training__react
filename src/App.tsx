@@ -36,7 +36,7 @@ function App() {
       {/* <Storage/> */}
       {/* <AssotiativeArray /> */}
       <AppRouter/>
-      {/* <ActualDate/> */}
+      <ActualDate/>
     </div>
   );
 }

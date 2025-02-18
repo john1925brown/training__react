@@ -20,7 +20,7 @@ function App() {
   }
   return (
     <div className="App">
-      <Accordion
+      {/* <Accordion
         title="My list"
         isCollapsed={isCollapsed}
         collapsedHandler={collapsedHandler}
@@ -30,13 +30,13 @@ function App() {
           { title: 'q', value: 3 },
         ]}
         onClickHandler={onClickHandler}
-      />
+      /> */}
       {/* <Radio /> */}
       {/* <CashMashine /> */}
       {/* <Storage/> */}
       {/* <AssotiativeArray /> */}
       <AppRouter/>
-      <ActualDate/>
+      {/* <ActualDate/> */}
     </div>
   );
 }

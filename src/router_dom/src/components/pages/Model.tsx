@@ -1,8 +1,8 @@
 import { useNavigate, useParams } from 'react-router-dom';
 import { adidasArr } from './Adidas';
-import { PATH } from '../../AppRouter';
 import { useEffect } from 'react';
 import { pumaArr } from './Puma';
+import { PATH } from '../../routes/router';
 
 type ParamsType = { brandName: 'adidas' | 'puma'; modelId: string };
 

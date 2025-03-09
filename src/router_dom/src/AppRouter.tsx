@@ -1,19 +1,6 @@
-import { Navigate, NavLink, Route, Routes } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import styles from './components/Site.module.css';
-import { Adidas } from './components/pages/Adidas';
-import { Puma } from './components/pages/Puma';
-import { PageThree } from './components/pages/PageThree';
-import { Error404 } from './components/pages/Error404';
-import { Model } from './components/pages/Model';
-import { Prices } from './components/pages/Prices';
-
-export const PATH = {
-  ADIDAS: '/adidas',
-  PUMA: '/puma',
-  PAGE3: '/abibas',
-  PRICES: '/prices',
-  ERROR404: '/error404',
-} as const;
+import { PATH } from './routes/router';
 
 export function AppRouter() {
   return (
@@ -48,7 +35,7 @@ export function AppRouter() {
               className={({ isActive }) =>
                 isActive ? styles.activeNavLink : styles.navLink
               }
-              to={PATH.PAGE3}
+              to={PATH.ABIBAS}
             >
               Abibas
             </NavLink>
@@ -65,16 +52,15 @@ export function AppRouter() {
           </div>
         </div>
         <div className={styles.content}>
-          <Routes>
+          <Outlet />
+          {/* <Routes>
             <Route path="/" element={<Navigate to={PATH.ADIDAS} />} />
-            <Route path={PATH.ADIDAS} element={<Adidas />} />
             <Route path={PATH.PUMA} element={<Puma />} />
-            <Route path={PATH.PAGE3} element={<PageThree />} />
+            <Route path={PATH.PAGE3} element={<Abibas />} />
             <Route path={PATH.ERROR404} element={<Error404 />} />
             <Route path={PATH.PRICES} element={<Prices />} />
 
-            <Route path="/:brandName/:modelId" element={<Model />} />
-          </Routes>
+          </Routes> */}
         </div>
       </div>
       <div className={styles.footer}>abibas 2023</div>

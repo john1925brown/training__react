@@ -1,8 +1,13 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import {  NavLink, Outlet, useNavigate } from 'react-router-dom';
 import styles from './components/Site.module.css';
 import { PATH } from './routes/router';
 
 export function AppRouter() {
+  const navigate = useNavigate();
+  const navigateHandler = () => {
+    navigate(-1);
+  };
+
   return (
     <div>
       <div className={styles.header}>
@@ -50,17 +55,27 @@ export function AppRouter() {
               Prices
             </NavLink>
           </div>
+          <div>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? styles.activeNavLink : styles.navLink
+              }
+              to={PATH.PROTECTED_PAGE}
+            >
+              Procected page
+            </NavLink>
+          </div>
         </div>
         <div className={styles.content}>
+          <div className={styles.HorizontalNavigation}>
+            <NavLink className={styles.LinkLikeButton} to={PATH.MAIN}>
+              Main Page
+            </NavLink>
+            <button onClick={navigateHandler} className={styles.LinkLikeButton}>
+              Back
+            </button>
+          </div>
           <Outlet />
-          {/* <Routes>
-            <Route path="/" element={<Navigate to={PATH.ADIDAS} />} />
-            <Route path={PATH.PUMA} element={<Puma />} />
-            <Route path={PATH.PAGE3} element={<Abibas />} />
-            <Route path={PATH.ERROR404} element={<Error404 />} />
-            <Route path={PATH.PRICES} element={<Prices />} />
-
-          </Routes> */}
         </div>
       </div>
       <div className={styles.footer}>abibas 2023</div>

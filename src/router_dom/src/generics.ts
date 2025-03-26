@@ -4,7 +4,7 @@ const filterArray = <T>(arr: T[], func: (elem: T) => boolean): T[] | [] => {
 }
 
 // Пример 1: Фильтрация чисел
-const numbers = [1, 2, 3, 4, 5]
+export const numbers = [1, 2, 3, 4, 5]
 const isEven = (num: number) => num % 2 === 0
 
 console.log(filterArray(numbers, isEven)) // [2, 4]

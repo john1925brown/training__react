@@ -5,13 +5,13 @@ type Props = {
   children: ReactNode;
 };
 
-export const ProtectedRoute = ({ children }: Props) => {
-  const [logged, setLogged] = useState(false);
+export const PrivateRoute = ({ children }: Props) => {
+  const [isAuth, setIsAuth] = useState(false);
 
   return (
     <>
       {/* @ts-ignore  */}
-      {logged ? children : <Navigate to={'/error404'} />}
+      {isAuth ? children : <Navigate to={'/login'} />}
     </>
   );
 };

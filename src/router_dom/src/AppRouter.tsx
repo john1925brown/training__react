@@ -50,17 +50,19 @@ export function AppRouter() {
               Prices
             </NavLink>
           </div>
+          <div>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? styles.activeNavLink : styles.navLink
+              }
+              to={PATH.PROTECTED_PAGE}
+            >
+              Procected page
+            </NavLink>
+          </div>
         </div>
         <div className={styles.content}>
           <Outlet />
-          {/* <Routes>
-            <Route path="/" element={<Navigate to={PATH.ADIDAS} />} />
-            <Route path={PATH.PUMA} element={<Puma />} />
-            <Route path={PATH.PAGE3} element={<Abibas />} />
-            <Route path={PATH.ERROR404} element={<Error404 />} />
-            <Route path={PATH.PRICES} element={<Prices />} />
-
-          </Routes> */}
         </div>
       </div>
       <div className={styles.footer}>abibas 2023</div>

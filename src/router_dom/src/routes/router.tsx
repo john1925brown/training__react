@@ -16,6 +16,7 @@ import { Login } from '../components/pages/Login';
 import { useState } from 'react';
 
 export const PATH = {
+  MAIN: '',
   ADIDAS: '/adidas',
   PUMA: '/puma',
   ABIBAS: '/abibas',
@@ -28,15 +29,15 @@ export const PATH = {
 
 const publicRoutes: RouteObject[] = [
   {
-    path: PATH.ERROR404,
-    element: <Error404 />,
-  },
-  {
     path: PATH.LOGIN,
     element: <Login />,
   },
   {
     path: PATH.ADIDAS,
+    element: <Adidas />,
+  },
+  {
+    path: PATH.MAIN,
     element: <Adidas />,
   },
   {
@@ -50,6 +51,10 @@ const publicRoutes: RouteObject[] = [
   {
     path: PATH.PRICES,
     element: <Prices />,
+  },
+  {
+    path: PATH.ERROR404,
+    element: <Error404 />,
   },
 
   {

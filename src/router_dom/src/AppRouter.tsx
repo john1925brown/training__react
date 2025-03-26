@@ -1,8 +1,13 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import {  NavLink, Outlet, useNavigate } from 'react-router-dom';
 import styles from './components/Site.module.css';
 import { PATH } from './routes/router';
 
 export function AppRouter() {
+  const navigate = useNavigate();
+  const navigateHandler = () => {
+    navigate(-1);
+  };
+
   return (
     <div>
       <div className={styles.header}>
@@ -62,6 +67,14 @@ export function AppRouter() {
           </div>
         </div>
         <div className={styles.content}>
+          <div className={styles.HorizontalNavigation}>
+            <NavLink className={styles.LinkLikeButton} to={PATH.MAIN}>
+              Main Page
+            </NavLink>
+            <button onClick={navigateHandler} className={styles.LinkLikeButton}>
+              Back
+            </button>
+          </div>
           <Outlet />
         </div>
       </div>
